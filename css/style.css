@@ -1,20 +1,148 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f3f4f6;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1 {
     text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
 }
 
-input, select, button {
-    margin: 10px;
-    padding: 8px;
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: #3498db;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+input, select {
+    padding: 10px;
     font-size: 1em;
+    width: 120px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
+button {
+    padding: 10px 16px;
+    font-size: 1em;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
-#result.error {
-    color: red;
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.output-box {
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 10px;
+}
+/* Dark mode support */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode input,
+.dark-mode select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+.dark-mode button {
+    background-color: #555;
+}
+
+.dark-mode .output-box {
+    color: #00ffae;
+}
+
+/* Toggle switch styling */
+.toggle-container {
+    text-align: right;
+    margin: 10px 20px 0 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.switch input { display: none; }
+
+.slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(21px);
 }

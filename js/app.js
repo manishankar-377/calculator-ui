@@ -35,6 +35,21 @@ function systemhealth() {
         });
 }
 
+function systemversion() {
+
+
+    const url = `http://localhost:8080/system/version`;
+
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("result").innerText = `Result: ${data}`;
+        })
+        .catch(error => {
+            document.getElementById("result").innerText = "Error connecting to backend.";
+        });
+}
+
 function postCalculate() {
     const num1 = document.getElementById("postNum1").value;
     const num2 = document.getElementById("postNum2").value;
@@ -65,5 +80,8 @@ function postCalculate() {
         .catch(error => {
             document.getElementById("postResult").innerText = "Error connecting to backend.";
         });
+}
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
 }
 
